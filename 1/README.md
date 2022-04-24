@@ -1,1 +1,1 @@
-# Binary Search I: Day 1
+# Binary Search I: Day 1 
