@@ -1,5 +1,5 @@
-# 1523
-# https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+# 374
+# https://leetcode.com/problems/guess-number-higher-or-lower/
 
 class Solution:
     def countOdds(self, low: int, high: int) -> int:
