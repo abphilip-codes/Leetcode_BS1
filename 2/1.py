@@ -1,6 +1,11 @@
-# 1523
-# https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+# 35
+# https://leetcode.com/problems/search-insert-position/
 
 class Solution:
-    def countOdds(self, low: int, high: int) -> int:
-        return (high - low + (low % 2) + (high % 2)) // 2
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        if target in nums:
+            return nums.index(target)
+        else:
+            for z in range(len(nums)):
+                if(nums[z]>target): return z
+                if(z==len(nums)-1): return z+1
