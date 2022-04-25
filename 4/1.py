@@ -8,4 +8,4 @@ class Solution:
         else:
             for z in range(len(nums)):
                 if(nums[z]>target): return z
-                if(z==len(nums)-1): return z+1
+                if(z==len(nums)-1): return z+1 
