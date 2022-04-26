@@ -1,5 +1,5 @@
-# 852
-# https://leetcode.com/problems/peak-index-in-a-mountain-array/
+# 744
+# https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
