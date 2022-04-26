@@ -2,10 +2,13 @@
 # https://leetcode.com/problems/sqrtx/
 
 class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        if target in nums:
-            return nums.index(target)
-        else:
-            for z in range(len(nums)):
-                if(nums[z]>target): return z
-                if(z==len(nums)-1): return z+1 
+    def mySqrt(self, x: int) -> int:
+        if(x<2): return x
+        l, r = x, x//2
+        while(l<=r):
+            mid = l+(r-l)//2;
+            s = mid**2
+            if(s==x): return mid
+            elif(s<x): l = mid+1
+            elif(s>x): r = mid-1 
+        return r
