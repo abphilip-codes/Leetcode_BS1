@@ -2,10 +2,14 @@
 # https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 
 class Solution:
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        l, r = 0, len(arr)-1
-        while(l<r):
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        # for z in letters:
+        #     if(ord(z)>ord(target)): return z
+        # else: return letters[0]
+        l, r = 0, len(letters)-1
+        ans = letters[0]
+        while(l<=r):
             mid = l+(r-l)//2
-            if(arr[mid]>=arr[mid+1]): r = mid
-            elif(arr[mid]<arr[mid+1]): l = mid + 1
-        return l 
+            if(ord(letters[mid])<=ord(target)): l = mid+1
+            else: ans, r = letters[mid], mid-1
+        return ans
