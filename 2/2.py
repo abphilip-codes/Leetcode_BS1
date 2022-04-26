@@ -7,5 +7,5 @@ class Solution:
         while(l<r):
             mid = l+(r-l)//2
             if(arr[mid]>=arr[mid+1]): r = mid
-            elif(arr[mid]<arr[mid+1]): l = mid + 1
+            elif(arr[mid]<arr[mid+1]): l = mid+1
         return l
