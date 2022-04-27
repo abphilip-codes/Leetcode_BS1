@@ -1,14 +1,14 @@
 # 278
 # https://leetcode.com/problems/first-bad-version/
 
+# The isBadVersion API is already defined for you.
+# def isBadVersion(version: int) -> bool:
+
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        if(x<2): return x
-        l, r = 2, x//2
+    def firstBadVersion(self, n: int) -> int:
+        l, r, ans = 1, n, None
         while(l<=r):
-            mid = l+(r-l)//2
-            s = mid**2
-            if(s==x): return mid
-            elif(s<x): l = mid+1
-            elif(s>x): r = mid-1 
-        return r
+            mid = (l+r)//2
+            if not isBadVersion(mid): l = mid+1
+            else: r, ans = mid-1, mid
+        return ans
