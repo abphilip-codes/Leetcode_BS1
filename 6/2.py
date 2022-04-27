@@ -2,14 +2,10 @@
 # https://leetcode.com/problems/kth-missing-positive-number/
 
 class Solution:
-    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
-        # for z in letters:
-        #     if(ord(z)>ord(target)): return z
-        # else: return letters[0]
-        l, r = 0, len(letters)-1
-        ans = letters[0]
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        l, r = 0, len(arr)-1
         while(l<=r):
-            mid = l+(r-l)//2
-            if(ord(letters[mid])<=ord(target)): l = mid+1
-            else: ans, r = letters[mid], mid-1
-        return ans
+            m = l+(r-l)//2
+            if(arr[m]-m-1>=k): r = m-1
+            elif(arr[m]-m-1<k): l = m+1
+        return arr[r]+(k-(arr[r]-(r)-1))
