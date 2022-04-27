@@ -2,13 +2,10 @@
 # https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
 class Solution:
-    def mySqrt(self, x: int) -> int:
-        if(x<2): return x
-        l, r = 2, x//2
-        while(l<=r):
-            mid = l+(r-l)//2
-            s = mid**2
-            if(s==x): return mid
-            elif(s<x): l = mid+1
-            elif(s>x): r = mid-1 
-        return r
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        l, r = 0, len(numbers)-1
+        while(l<r):
+            if(numbers[l]+numbers[r]==target): return [l+1, r+1]
+            elif(numbers[l]+numbers[r]<target): l+=1
+            elif(numbers[l]+numbers[r]>target): r-=1
+        return [-1,-1]
