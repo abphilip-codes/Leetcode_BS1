@@ -2,11 +2,14 @@
 # https://leetcode.com/problems/search-in-rotated-sorted-array/
 
 class Solution:
-    def judgeSquareSum(self, c: int) -> bool:
-        l, r = 0, int(sqrt(c))
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
         while(l<=r):
-            k = l**2 + r**2
-            if(k==c): return True
-            elif(k<c): l+=1
-            elif(k>c): r-=1
-        return False
+            mid = (l+r)//2
+            if(target<nums[0])==(nums[mid]<nums[0]):
+                if(target==nums[mid]): return mid
+                elif(target<nums[mid]): r = mid-1
+                elif(target>nums[mid]): l = mid+1
+            elif(target < nums[0]): l = mid+1
+            else: r = mid-1
+        return -1
